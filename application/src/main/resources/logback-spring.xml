@@ -83,6 +83,7 @@
     <logger name="com.ibatis" level="WARN"/>
     <logger name="tk.mybatis" level="WARN"/>
     <logger name="com.netflix" level="WARN"/>
+    <logger name="com.zaxxer.hikari" level="WARN"/>
     <logger name="reactor" level="WARN"/>
     <logger name="com.pisces.platform.web" level="WARN"/>
 
