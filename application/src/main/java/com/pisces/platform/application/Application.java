@@ -4,10 +4,6 @@ import com.pisces.framework.core.utils.AppUtils;
 import com.pisces.framework.rds.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
-import org.springframework.boot.autoconfigure.jdbc.XADataSourceAutoConfiguration;
-import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
@@ -18,7 +14,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 //@SpringBootApplication
 @SpringBootApplication(scanBasePackages = {"com.pisces"})
-@MapperScan(basePackages = {"com.pisces.**.dao", "com.pisces.**.dao.impl"})
+@MapperScan
 @EnableDiscoveryClient
 public class Application {
     public static void main(String[] args) {
