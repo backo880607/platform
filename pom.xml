@@ -16,9 +16,14 @@
     <name>platform-parent</name>
 
     <modules>
+        <module>token</module>
+        <module>logserver</module>
+        <module>workflow</module>
         <module>user</module>
         <module>application</module>
-        <module>token</module>
+        <module>maintenance</module>
+        <module>message</module>
+        <module>chat</module>
     </modules>
 
     <properties>
