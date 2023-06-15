@@ -13,7 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <name>platform-parent</name>
+    <name>platform</name>
 
     <modules>
         <module>token</module>
@@ -22,8 +22,9 @@
         <module>user</module>
         <module>application</module>
         <module>maintenance</module>
-        <module>message</module>
+        <module>jms</module>
         <module>chat</module>
+        <module>storage</module>
     </modules>
 
     <properties>
@@ -45,7 +46,7 @@
     <dependencies>
         <dependency>
             <groupId>com.pisces.framework</groupId>
-            <artifactId>pisces-framework-spring-boot-starter</artifactId>
+            <artifactId>pisces-framework-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
