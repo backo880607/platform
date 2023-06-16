@@ -86,6 +86,7 @@
     <logger name="com.zaxxer.hikari" level="WARN"/>
     <logger name="reactor" level="WARN"/>
     <logger name="com.pisces.platform.web" level="WARN"/>
+    <logger name="com.pisces.framework.rds.config.ClassPathMapperScanner" level="WARN"/>
 
     <springProfile name="dev">
         <root level="DEBUG">

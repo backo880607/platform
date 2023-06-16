@@ -16,6 +16,10 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.pisces.platform</groupId>
+            <artifactId>user</artifactId>
+        </dependency>
     </dependencies>
 
     <build>

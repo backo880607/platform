@@ -1,5 +1,5 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
@@ -16,15 +16,15 @@
     <name>platform</name>
 
     <modules>
-        <module>token</module>
         <module>logserver</module>
+        <module>token</module>
+        <module>storage</module>
         <module>workflow</module>
         <module>user</module>
-        <module>application</module>
-        <module>maintenance</module>
         <module>jms</module>
         <module>chat</module>
-        <module>storage</module>
+        <module>maintenance</module>
+        <module>application</module>
     </modules>
 
     <properties>
@@ -33,6 +33,51 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.pisces.platform</groupId>
+                <artifactId>logserver</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pisces.platform</groupId>
+                <artifactId>token</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pisces.platform</groupId>
+                <artifactId>storage</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pisces.platform</groupId>
+                <artifactId>workflow</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pisces.platform</groupId>
+                <artifactId>user</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pisces.platform</groupId>
+                <artifactId>jms</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pisces.platform</groupId>
+                <artifactId>chat</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pisces.platform</groupId>
+                <artifactId>maintenance</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pisces.platform</groupId>
+                <artifactId>application</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
