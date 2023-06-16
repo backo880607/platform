@@ -18,13 +18,13 @@
     <modules>
         <module>logserver</module>
         <module>token</module>
+        <module>application</module>
         <module>storage</module>
         <module>workflow</module>
         <module>user</module>
         <module>jms</module>
         <module>chat</module>
         <module>maintenance</module>
-        <module>application</module>
     </modules>
 
     <properties>
@@ -41,6 +41,11 @@
             <dependency>
                 <groupId>com.pisces.platform</groupId>
                 <artifactId>token</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pisces.platform</groupId>
+                <artifactId>application</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
@@ -71,11 +76,6 @@
             <dependency>
                 <groupId>com.pisces.platform</groupId>
                 <artifactId>maintenance</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.pisces.platform</groupId>
-                <artifactId>application</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
