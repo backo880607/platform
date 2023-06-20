@@ -4,78 +4,79 @@
 
     <parent>
         <groupId>com.pisces.framework</groupId>
-        <artifactId>parent</artifactId>
+        <artifactId>framework-parent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <groupId>com.pisces.platform</groupId>
-    <artifactId>parent</artifactId>
+    <artifactId>platform-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>platform</name>
 
     <modules>
-        <module>logserver</module>
-        <module>token</module>
-        <module>application</module>
-        <module>storage</module>
-        <module>workflow</module>
-        <module>user</module>
-        <module>jms</module>
-        <module>chat</module>
-        <module>maintenance</module>
+        <module>platform-log</module>
+        <module>platform-token</module>
+        <module>platform-application</module>
+        <module>platform-storage</module>
+        <module>platform-workflow</module>
+        <module>platform-user</module>
+        <module>platform-jms</module>
+        <module>platform-chat</module>
+        <module>platform-maintenance</module>
     </modules>
 
     <properties>
         <spring-cloud.version>2022.0.2</spring-cloud.version>
+        <plumelog.version>3.5.3</plumelog.version>
     </properties>
 
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>com.pisces.platform</groupId>
-                <artifactId>logserver</artifactId>
+                <artifactId>platform-log</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.pisces.platform</groupId>
-                <artifactId>token</artifactId>
+                <artifactId>platform-token</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.pisces.platform</groupId>
-                <artifactId>application</artifactId>
+                <artifactId>platform-application</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.pisces.platform</groupId>
-                <artifactId>storage</artifactId>
+                <artifactId>platform-storage</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.pisces.platform</groupId>
-                <artifactId>workflow</artifactId>
+                <artifactId>platform-workflow</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.pisces.platform</groupId>
-                <artifactId>user</artifactId>
+                <artifactId>platform-user</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.pisces.platform</groupId>
-                <artifactId>jms</artifactId>
+                <artifactId>platform-jms</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.pisces.platform</groupId>
-                <artifactId>chat</artifactId>
+                <artifactId>platform-chat</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.pisces.platform</groupId>
-                <artifactId>maintenance</artifactId>
+                <artifactId>platform-maintenance</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
@@ -91,11 +92,16 @@
     <dependencies>
         <dependency>
             <groupId>com.pisces.framework</groupId>
-            <artifactId>pisces-framework-starter</artifactId>
+            <artifactId>framework-starter</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-consul-discovery</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.plumelog</groupId>
+            <artifactId>plumelog-logback</artifactId>
+            <version>${plumelog.version}</version>
         </dependency>
     </dependencies>
 </project>
