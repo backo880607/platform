@@ -12,7 +12,7 @@ import org.springframework.context.annotation.PropertySource;
  * @date 2022/12/08
  */
 @Configuration
-@EnableConfigurationProperties({ApplicationProperties.class})
-@PropertySource(ignoreResourceNotFound = true, value = "classpath:aps.properties")
-public class ApplicationAutoConfiguration extends BaseConfiguration {
+@EnableConfigurationProperties({PlatformProperties.class})
+@PropertySource(ignoreResourceNotFound = true, value = "classpath:platform.properties")
+public class PlatformAutoConfiguration extends BaseConfiguration {
 }

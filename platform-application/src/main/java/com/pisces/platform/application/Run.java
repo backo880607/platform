@@ -16,9 +16,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @SpringBootApplication(scanBasePackages = {"com.pisces"})
 @MapperScan
 @EnableDiscoveryClient
-public class Application {
+public class Run {
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(Application.class);
+        SpringApplication app = new SpringApplication(Run.class);
         AppUtils.setContext(app.run(args));
     }
 }

@@ -10,8 +10,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @date 2022/12/08
  */
 @ConfigurationProperties(prefix = "pisces.platform.application")
-public class ApplicationProperties extends BaseProperties {
-    public ApplicationProperties() {
-        super(ApplicationConstant.IDENTIFY);
+public class PlatformProperties extends BaseProperties {
+    public PlatformProperties() {
+        super(PlatformConstant.IDENTIFY);
     }
 }

@@ -6,6 +6,6 @@ package com.pisces.platform.application.config;
  * @author jason
  * @date 2022/12/08
  */
-public class ApplicationConstant {
-    public static final String IDENTIFY = "application";
+public class PlatformConstant {
+    public static final String IDENTIFY = "platform";
 }

@@ -13,6 +13,6 @@ import org.springframework.context.annotation.PropertySource;
  */
 @Configuration
 @EnableConfigurationProperties(UserProperties.class)
-@PropertySource(ignoreResourceNotFound = true, value = "classpath:user.properties")
+@PropertySource(ignoreResourceNotFound = true, value = "classpath:platform-user.properties")
 public class UserAutoConfiguration extends BaseConfiguration {
 }

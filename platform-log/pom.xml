@@ -29,7 +29,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.pisces.platform.application.Application</mainClass>
+                    <mainClass>com.pisces.platform.application.Run</mainClass>
                     <layout>JAR</layout>
                     <excludes>
                         <exclude>

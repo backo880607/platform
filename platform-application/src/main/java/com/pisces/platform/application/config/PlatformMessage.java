@@ -6,5 +6,5 @@ package com.pisces.platform.application.config;
  * @author jason
  * @date 2022/12/08
  */
-public enum ApplicationMessage {
+public enum PlatformMessage {
 }

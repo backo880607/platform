@@ -2,7 +2,7 @@ package com.pisces.platform.application.controller;
 
 import com.pisces.framework.web.controller.BeanController;
 import com.pisces.platform.application.bean.ApplicationConfig;
-import com.pisces.platform.application.config.ApplicationConstant;
+import com.pisces.platform.application.config.PlatformConstant;
 import com.pisces.platform.application.service.ApplicationConfigService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2022/12/07
  */
 @RestController
-@RequestMapping(ApplicationConstant.IDENTIFY + "/ApplicationConfig")
+@RequestMapping(PlatformConstant.IDENTIFY + "/ApplicationConfig")
 public class ApplicationConfigController extends BeanController<ApplicationConfig, ApplicationConfigService> {
 }
