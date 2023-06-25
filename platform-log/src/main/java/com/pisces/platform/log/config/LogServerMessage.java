@@ -1,7 +1,7 @@
 package com.pisces.platform.log.config;
 
 /**
- * logserver消息
+ * LogServer消息
  *
  * @author jason
  * @date 2022/12/08

@@ -1,11 +1,11 @@
 package com.pisces.platform.log.config;
 
 /**
- * logserver常量
+ * LogServer常量
  *
  * @author jason
  * @date 2022/12/08
  */
 public class LogServerConstant {
-    public static final String IDENTIFY = "logserver";
+    public static final String IDENTIFY = "log";
 }

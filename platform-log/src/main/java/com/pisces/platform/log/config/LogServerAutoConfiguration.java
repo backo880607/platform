@@ -6,13 +6,13 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
 /**
- * logserver自动配置
+ * LogServer自动配置
  *
  * @author jason
  * @date 2022/12/08
  */
 @Configuration
 @EnableConfigurationProperties(LogServerProperties.class)
-@PropertySource(ignoreResourceNotFound = true, value = "classpath:logserver.properties")
+@PropertySource(ignoreResourceNotFound = true, value = "classpath:platform-log.properties")
 public class LogServerAutoConfiguration extends BaseConfiguration {
 }
