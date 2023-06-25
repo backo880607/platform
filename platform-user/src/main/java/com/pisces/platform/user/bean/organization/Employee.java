@@ -1,7 +1,7 @@
 package com.pisces.platform.user.bean.organization;
 
-import com.pisces.framework.core.annotation.PropertyMeta;
 import com.pisces.framework.core.entity.BeanObject;
+import com.pisces.framework.type.annotation.PropertyMeta;
 import com.pisces.platform.user.enums.organization.*;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;

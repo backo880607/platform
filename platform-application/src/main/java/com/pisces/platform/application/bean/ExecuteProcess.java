@@ -1,7 +1,7 @@
 package com.pisces.platform.application.bean;
 
-import com.pisces.framework.core.annotation.PropertyMeta;
 import com.pisces.framework.core.entity.BeanObject;
+import com.pisces.framework.type.annotation.PropertyMeta;
 import lombok.Getter;
 import lombok.Setter;
 
