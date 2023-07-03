@@ -1,8 +1,8 @@
 package com.pisces.platform.user.bean.dataset;
 
 import com.pisces.framework.core.entity.BeanObject;
+import com.pisces.framework.type.annotation.TableMeta;
 import com.pisces.platform.user.enums.organization.GENDER;
-import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -17,7 +17,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@Table(name = "USER_ACCOUNT")
+@TableMeta(name = "USER_ACCOUNT")
 public class Account extends BeanObject {
     private String username;
     private String fullName;

@@ -1,7 +1,7 @@
 package com.pisces.platform.application.bean;
 
-import com.pisces.framework.core.entity.EntityAccount;
-import jakarta.persistence.Table;
+import com.pisces.framework.core.entity.BeanAccount;
+import com.pisces.framework.type.annotation.TableMeta;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,8 +13,8 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@Table(name = "PLATFORM_APPLICATION_CONFIG")
-public class ApplicationConfig extends EntityAccount {
+@TableMeta(name = "PLATFORM_APPLICATION_CONFIG")
+public class ApplicationConfig extends BeanAccount {
     private String lastApp;
     private String language;
     private String theme;

@@ -2,8 +2,8 @@ package com.pisces.platform.user.bean.organization;
 
 import com.pisces.framework.core.entity.BeanObject;
 import com.pisces.framework.type.annotation.PropertyMeta;
+import com.pisces.framework.type.annotation.TableMeta;
 import com.pisces.platform.user.enums.organization.*;
-import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -20,7 +20,7 @@ import java.util.Date;
  */
 @Getter
 @Setter
-@Table(name = "USER_EMPLOYEE")
+@TableMeta(name = "USER_EMPLOYEE")
 public class Employee extends BeanObject {
     private String employeeCode;
     @PropertyMeta(popDisplay = true)

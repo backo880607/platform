@@ -7,5 +7,5 @@ package com.pisces.platform.user.config;
  * @date 2022/12/08
  */
 public enum UserMessage {
-
+    TenantExisted,
 }

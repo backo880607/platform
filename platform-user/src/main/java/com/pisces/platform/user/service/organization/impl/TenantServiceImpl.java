@@ -17,10 +17,6 @@ class TenantServiceImpl extends BeanServiceImpl<Tenant, TenantDao> implements Te
 
     @Override
     public void register(Tenant tenant) {
-//        LambdaQueryWrapper<Tenant> qw = Wrappers.lambdaQuery();
-//        qw.eq(Tenant::getTenantCode, tenant.getTenantCode());
-//        qw.orderByAsc(Tenant::getId);
-//        String dddd = qw.getSqlSegment();
 //        Tenant existed = getDao().get(qw);
 //        if (existed != null) {
 //            throw new RegisteredException(UserMessage.TenantExisted);

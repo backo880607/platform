@@ -2,7 +2,7 @@ package com.pisces.platform.user.bean.organization;
 
 import com.pisces.framework.core.entity.BeanObject;
 import com.pisces.framework.core.validator.constraints.Phone;
-import jakarta.persistence.Table;
+import com.pisces.framework.type.annotation.TableMeta;
 import jakarta.validation.constraints.Email;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,7 +15,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@Table(name = "USER_TENANT")
+@TableMeta(name = "USER_TENANT")
 public class Tenant extends BeanObject {
     /**
      * 租户代码

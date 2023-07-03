@@ -1,7 +1,7 @@
 package com.pisces.platform.user.bean.dataset;
 
 import com.pisces.framework.core.entity.BeanObject;
-import jakarta.persistence.Table;
+import com.pisces.framework.type.annotation.TableMeta;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -15,7 +15,7 @@ import java.util.Date;
  */
 @Getter
 @Setter
-@Table(name = "USER_DATA_SET")
+@TableMeta(name = "USER_DATA_SET")
 public class DataSet extends BeanObject {
     private String dataSetCode;
     private String dataSetName;

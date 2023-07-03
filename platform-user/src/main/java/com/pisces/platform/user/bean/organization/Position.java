@@ -1,7 +1,7 @@
 package com.pisces.platform.user.bean.organization;
 
 import com.pisces.framework.core.entity.BeanObject;
-import jakarta.persistence.Table;
+import com.pisces.framework.type.annotation.TableMeta;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,7 +13,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@Table(name = "USER_POSITION")
+@TableMeta(name = "USER_POSITION")
 public class Position extends BeanObject {
     /**
      * 职位代码

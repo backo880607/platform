@@ -24,7 +24,7 @@
         <module>platform-user</module>
         <module>platform-jms</module>
         <module>platform-chat</module>
-        <module>platform-maintenance</module>
+        <module>platform-monitor</module>
     </modules>
 
     <properties>
@@ -76,7 +76,7 @@
             </dependency>
             <dependency>
                 <groupId>com.pisces.platform</groupId>
-                <artifactId>platform-maintenance</artifactId>
+                <artifactId>platform-monitor</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>

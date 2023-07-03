@@ -1,7 +1,7 @@
 package com.pisces.platform.user.bean.organization;
 
 import com.pisces.framework.core.entity.BeanObject;
-import jakarta.persistence.Table;
+import com.pisces.framework.type.annotation.TableMeta;
 
 /**
  * 部门员工
@@ -9,6 +9,6 @@ import jakarta.persistence.Table;
  * @author jason
  * @date 2022/12/03
  */
-@Table(name = "USER_DEPARTMENT_EMPLOYEE")
+@TableMeta(name = "USER_DEPARTMENT_EMPLOYEE")
 public class DepartmentEmployee extends BeanObject {
 }

@@ -1,8 +1,8 @@
 package com.pisces.platform.user.bean.organization;
 
 import com.pisces.framework.core.entity.BeanObject;
+import com.pisces.framework.type.annotation.TableMeta;
 import com.pisces.platform.user.enums.organization.ORGANIZATION_TYPE;
-import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,7 +14,7 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@Table(name = "USER_ORGANIZATION")
+@TableMeta(name = "USER_ORGANIZATION")
 public class Organization extends BeanObject {
     /**
      * 组织代码
