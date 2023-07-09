@@ -16,10 +16,14 @@ import lombok.Setter;
 @TableMeta(name = "USER_DATA_SET_ACCOUNT")
 public class DataSetAccount extends BeanObject {
     private Boolean defaultDataSet;
+    private Long accountId;
+    private Long dataSetId;
 
     @Override
     public void init() {
         super.init();
-        this.defaultDataSet = false;
+        defaultDataSet = false;
+        accountId = 0L;
+        dataSetId = 0L;
     }
 }

@@ -17,6 +17,13 @@ import java.util.Date;
 @Setter
 @TableMeta(name = "USER_DATA_SET")
 public class DataSet extends BeanObject {
+    /**
+     * 组织编码
+     */
+    private String orgCode;
+    /**
+     * 数据集编码，数据集编码可以修改，因此实际的数据应该根据数据集的ID进行关联。
+     */
     private String dataSetCode;
     private String dataSetName;
 
@@ -28,11 +35,12 @@ public class DataSet extends BeanObject {
     @Override
     public void init() {
         super.init();
-        this.dataSetCode = "";
-        this.dataSetName = "";
-        this.endDate = new Date();
-        this.maxLoginQty = 5;
-        this.maxAccountQty = 5;
-        this.remark = "";
+        orgCode = "";
+        dataSetCode = "";
+        dataSetName = "";
+        endDate = new Date();
+        maxLoginQty = 5;
+        maxAccountQty = 5;
+        remark = "";
     }
 }

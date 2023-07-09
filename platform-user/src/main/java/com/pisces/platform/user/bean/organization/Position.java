@@ -6,7 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * 职位
+ * 岗位
  *
  * @author jason
  * @date 2022/12/03
@@ -16,13 +16,17 @@ import lombok.Setter;
 @TableMeta(name = "USER_POSITION")
 public class Position extends BeanObject {
     /**
-     * 职位代码
+     * 岗位编码
      */
     private String positionCode;
     /**
-     * 职位名称
+     * 岗位名称
      */
     private String positionName;
+    /**
+     * 上级岗位
+     */
+    private String parentCode;
 
     /**
      * 备注
@@ -32,8 +36,9 @@ public class Position extends BeanObject {
     @Override
     public void init() {
         super.init();
-        this.positionCode = "";
-        this.positionName = "";
-        this.remark = "";
+        positionCode = "";
+        positionName = "";
+        parentCode = "";
+        remark = "";
     }
 }

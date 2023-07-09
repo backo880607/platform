@@ -23,4 +23,11 @@ public interface DataSetService extends BeanService<DataSet> {
      * @param dataSet 数据集
      */
     void unregister(DataSet dataSet);
+
+    /**
+     * 检查有效
+     *
+     * @param dataSet 数据集
+     */
+    boolean checkValid(DataSet dataSet);
 }

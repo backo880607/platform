@@ -10,4 +10,5 @@ import com.pisces.platform.user.bean.dataset.DataSetAccount;
  * @date 2022/12/07
  */
 public interface DataSetAccountService extends BeanService<DataSetAccount> {
+    boolean checkValid(DataSetAccount dataSetAccount);
 }

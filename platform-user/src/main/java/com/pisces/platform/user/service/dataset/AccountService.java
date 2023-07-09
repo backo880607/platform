@@ -10,25 +10,32 @@ import com.pisces.platform.user.bean.dataset.Account;
  * @date 2022/12/07
  */
 public interface AccountService extends BeanService<Account> {
-//    /**
-//     * 注册账户
-//     *
-//     * @param account 账户
-//     */
-//    void register(Account account);
-//
-//    /**
-//     * 注销账户
-//     *
-//     * @param account 账户
-//     */
-//    void unregister(Account account);
-//
-//    /**
-//     * 根据用户名获取账号信息
-//     *
-//     * @param username 用户名
-//     * @return {@link Account}
-//     */
-//    Account getByUserName(String username);
+    /**
+     * 登录
+     *
+     * @param account 账户
+     */
+    void login(Account account);
+
+    /**
+     * 注册账户
+     *
+     * @param account 账户
+     */
+    void register(Account account);
+
+    /**
+     * 注销账户
+     *
+     * @param account 账户
+     */
+    void unregister(Account account);
+
+    /**
+     * 根据用户名获取账号信息
+     *
+     * @param username 用户名
+     * @return {@link Account}
+     */
+    Account getByUserName(String username);
 }

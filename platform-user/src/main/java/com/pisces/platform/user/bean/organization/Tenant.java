@@ -4,6 +4,7 @@ import com.pisces.framework.core.entity.BeanObject;
 import com.pisces.framework.core.validator.constraints.Phone;
 import com.pisces.framework.type.annotation.TableMeta;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,7 +19,7 @@ import lombok.Setter;
 @TableMeta(name = "USER_TENANT")
 public class Tenant extends BeanObject {
     /**
-     * 租户代码
+     * 租户编码，一旦创建后即不能修改
      */
     private Integer tenantCode;
     /**
@@ -28,7 +29,18 @@ public class Tenant extends BeanObject {
     /**
      * 租户全称
      */
+    @NotBlank
     private String tenantName;
+
+    /**
+     * 英文名字
+     */
+    private String englishName;
+
+    /**
+     * 租户Logo
+     */
+    private String tenantLogo;
 
     /**
      * 电话
@@ -48,11 +60,13 @@ public class Tenant extends BeanObject {
     @Override
     public void init() {
         super.init();
-        this.tenantCode = 0;
-        this.shortName = "";
-        this.tenantName = "";
-        this.telephone = "";
-        this.email = "";
-        this.address = "";
+        tenantCode = 0;
+        shortName = "";
+        tenantName = "";
+        englishName = "";
+        tenantLogo = "";
+        telephone = "";
+        email = "";
+        address = "";
     }
 }

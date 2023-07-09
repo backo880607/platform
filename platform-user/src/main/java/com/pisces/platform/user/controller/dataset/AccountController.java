@@ -6,10 +6,7 @@ import com.pisces.platform.user.bean.dataset.Account;
 import com.pisces.platform.user.config.UserConstant;
 import com.pisces.platform.user.dto.UserDataDto;
 import com.pisces.platform.user.service.dataset.AccountService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 帐户控制器
@@ -20,7 +17,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping(UserConstant.IDENTIFY + "/Account")
 class AccountController extends BeanController<Account, AccountService> {
-    private static final String ROOT_ACCOUNT = "root";
+
+    @PostMapping("login")
+    public ResponseData login(@RequestBody Account account) {
+        getService().login(account);
+        return success();
+    }
 
     @GetMapping("getUserData")
     public ResponseData getUserData() {

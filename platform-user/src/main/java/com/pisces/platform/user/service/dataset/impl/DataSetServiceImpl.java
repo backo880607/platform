@@ -1,6 +1,7 @@
 package com.pisces.platform.user.service.dataset.impl;
 
 import com.pisces.framework.core.service.BeanServiceImpl;
+import com.pisces.framework.core.utils.lang.DateUtils;
 import com.pisces.platform.user.bean.dataset.DataSet;
 import com.pisces.platform.user.dao.dataset.DataSetDao;
 import com.pisces.platform.user.service.dataset.DataSetService;
@@ -23,6 +24,11 @@ class DataSetServiceImpl extends BeanServiceImpl<DataSet, DataSetDao> implements
     @Override
     public void unregister(DataSet dataSet) {
 
+    }
+
+    @Override
+    public boolean checkValid(DataSet dataSet) {
+        return dataSet.getEndDate() == null || !dataSet.getEndDate().before(DateUtils.now());
     }
 
 }

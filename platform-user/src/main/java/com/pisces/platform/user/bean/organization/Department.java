@@ -23,14 +23,24 @@ public class Department extends BeanObject {
      * 部门名称
      */
     private String departmentName;
+    /**
+     * 上级部门编码
+     */
+    private String parentCode;
+    /**
+     * 组织代码
+     */
+    private String orgCode;
 
     private String remark;
 
     @Override
     public void init() {
         super.init();
-        this.departmentCode = "";
-        this.departmentName = "";
-        this.remark = "";
+        departmentCode = "";
+        departmentName = "";
+        parentCode = "";
+        orgCode = "";
+        remark = "";
     }
 }

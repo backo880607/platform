@@ -1,11 +1,11 @@
 package com.pisces.platform.user.bean.dataset;
 
 import com.pisces.framework.core.entity.BeanObject;
+import com.pisces.framework.core.validator.constraints.Phone;
 import com.pisces.framework.type.annotation.TableMeta;
 import com.pisces.platform.user.enums.organization.GENDER;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,12 +19,12 @@ import lombok.Setter;
 @Setter
 @TableMeta(name = "USER_ACCOUNT")
 public class Account extends BeanObject {
+    @NotBlank()
     private String username;
     private String fullName;
     private String avatar;
     private GENDER gender;
-    @Pattern(regexp = "^1(3|4|5|7|8)\\d{9}$")
-    @NotBlank()
+    @Phone
     private String telephone;
     @Email
     private String email;
