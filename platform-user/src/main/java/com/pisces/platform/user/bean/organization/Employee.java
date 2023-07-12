@@ -104,30 +104,30 @@ public class Employee extends BeanObject {
     @Override
     public void init() {
         super.init();
-        this.employeeCode = "";
-        this.employeeName = "";
-        this.englishName = "";
-        this.type = EMPLOYEE_TYPE.TRAINEE;
-        this.avatar = "";
-        this.telephone = "";
-        this.email = "";
-        this.gender = GENDER.MALE;
-        this.address = "";
-        this.married = false;
-        this.idType = IDENTITY_TYPE.ID;
-        this.idCode = "";
-        this.dob = new Date();
-        this.country = "";
-        this.school = "";
-        this.degree = DEGREE_TYPE.COLLEGE;
-        this.major = "";
-        this.graduateDate = new Date();
-        this.nativePlace = NATIVE_PLACE.BEIJING;
-        this.nationality = NATIONALITY_TYPE.HAN_ETHNIC;
-        this.emergeContact = "";
-        this.emergePhone = "";
-        this.onboardDate = new Date();
-        this.permanentDate = new Date();
-        this.departureDate = new Date();
+        employeeCode = "";
+        employeeName = "";
+        englishName = "";
+        type = EMPLOYEE_TYPE.TRAINEE;
+        avatar = "";
+        telephone = "";
+        email = "";
+        gender = GENDER.MALE;
+        address = "";
+        married = false;
+        idType = IDENTITY_TYPE.ID;
+        idCode = "";
+        dob = new Date();
+        country = "";
+        school = "";
+        degree = DEGREE_TYPE.COLLEGE;
+        major = "";
+        graduateDate = new Date();
+        nativePlace = NATIVE_PLACE.BEIJING;
+        nationality = NATIONALITY_TYPE.HAN_ETHNIC;
+        emergeContact = "";
+        emergePhone = "";
+        onboardDate = new Date();
+        permanentDate = new Date();
+        departureDate = new Date();
     }
 }
