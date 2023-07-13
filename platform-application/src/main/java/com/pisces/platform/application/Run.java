@@ -12,7 +12,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * @author jason
  * @date 2022/12/07
  */
-//@SpringBootApplication
 @SpringBootApplication(scanBasePackages = {"com.pisces"})
 @MapperScan
 @EnableDiscoveryClient
