@@ -42,12 +42,17 @@ public class CommonServiceImpl extends BaseServiceImpl implements CommonService 
         if (beanClass == null) {
             throw new ExistedException(WebMessage.Query);
         }
+        GridResponse response = new GridResponse();
 
         QueryWrapper qw = obtainQueryWrapper(beanClass, request.getFilterModel(), request.getSortModel());
         qw.offset(request.getStartRow()).limit(request.getEndRow() - request.getStartRow());
+        long totalCount = ServiceManager.fetchService(beanClass).getBaseDao().fetchCount(qw);
+        if (totalCount <= 0) {
+            return response;
+        }
         List<? extends BeanObject> beans = ServiceManager.fetchService(beanClass).getBaseDao().fetch(qw);
-        GridResponse response = new GridResponse();
         response.setBeans(beans);
+        response.setTotalRow(totalCount);
         return response;
     }
 

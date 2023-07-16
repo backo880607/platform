@@ -22,9 +22,10 @@
         <module>platform-storage</module>
         <module>platform-workflow</module>
         <module>platform-user</module>
-        <module>platform-jms</module>
+        <module>platform-notification</module>
         <module>platform-chat</module>
         <module>platform-monitor</module>
+        <module>platform-email</module>
     </modules>
 
     <properties>
@@ -66,7 +67,7 @@
             </dependency>
             <dependency>
                 <groupId>com.pisces.platform</groupId>
-                <artifactId>platform-jms</artifactId>
+                <artifactId>platform-notification</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
@@ -77,6 +78,11 @@
             <dependency>
                 <groupId>com.pisces.platform</groupId>
                 <artifactId>platform-monitor</artifactId>
+                <version>0.0.1-SNAPSHOT</version>
+            </dependency>
+            <dependency>
+                <groupId>com.pisces.platform</groupId>
+                <artifactId>platform-email</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>

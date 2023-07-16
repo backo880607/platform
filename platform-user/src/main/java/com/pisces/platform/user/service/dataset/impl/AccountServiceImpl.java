@@ -10,14 +10,11 @@ import com.pisces.framework.core.utils.lang.StringUtils;
 import com.pisces.platform.user.bean.dataset.Account;
 import com.pisces.platform.user.bean.dataset.DataSetAccount;
 import com.pisces.platform.user.bean.dataset.table.QDataSetAccount;
-import com.pisces.platform.user.bean.permission.Role;
-import com.pisces.platform.user.bean.permission.table.QRole;
 import com.pisces.platform.user.config.UserMessage;
 import com.pisces.platform.user.dao.dataset.AccountDao;
 import com.pisces.platform.user.enums.system.LOGIN_TYPE;
 import com.pisces.platform.user.service.dataset.AccountService;
 import com.pisces.platform.user.service.dataset.DataSetAccountService;
-import com.pisces.platform.user.service.permission.RoleService;
 import com.pisces.platform.user.service.system.UserConfigService;
 import com.pisces.platform.user.token.TokenUtil;
 import jakarta.annotation.Resource;
@@ -42,8 +39,6 @@ class AccountServiceImpl extends BeanServiceImpl<Account, AccountDao> implements
 
     @Resource
     private DataSetAccountService dataSetAccountService;
-    @Resource
-    private RoleService roleService;
 
     private Account fetchLoginAccount(Account request) {
         Account account = null;
@@ -93,11 +88,6 @@ class AccountServiceImpl extends BeanServiceImpl<Account, AccountDao> implements
         return dataSetAccount;
     }
 
-    private List<Role> fetchRoles(DataSetAccount dataSetAccount) {
-        return roleService.list(QRole.dataSetId.equal(dataSetAccount.getDataSetId())
-                .and(QRole.accountId.equal(dataSetAccount.getAccountId())));
-    }
-
     @Override
     public void login(Account request) {
         if (Guard.value(request.getUsername()).equals(ROOT_ACCOUNT)) {
@@ -106,7 +96,7 @@ class AccountServiceImpl extends BeanServiceImpl<Account, AccountDao> implements
         }
         Account account = fetchLoginAccount(request);
         DataSetAccount dataSetAccount = fetchDataSetAccount(account);
-        List<String> roles = fetchRoles(dataSetAccount).stream().map(Role::getRoleCode).toList();
+        List<String> roles = dataSetAccountService.fetchRoles(dataSetAccount);
         AccountData data = new AccountData();
         data.setAccount(account.getUsername());
         data.setTenant(account.getTenant());
@@ -145,7 +135,28 @@ class AccountServiceImpl extends BeanServiceImpl<Account, AccountDao> implements
     }
 
     @Override
-    public Account getByUserName(String username) {
-        return getDao().getByUserName(username);
+    public Account getByAccountName(String accountName) {
+        Guard.assertTrue(StringUtils.isNotBlank(accountName), UserMessage.AccountBlank);
+
+        Account account = null;
+        if (accountName.equals(ROOT_ACCOUNT)) {
+            account = create();
+            account.setUsername(ROOT_ACCOUNT);
+            account.setFullName(lang.get(UserMessage.SuperAdmin));
+            return account;
+        }
+
+        LOGIN_TYPE loginType = configService.get().getLoginType();
+        switch (loginType) {
+            case USERNAME -> account = getDao().getByUserName(accountName);
+            case EMAIL -> account = getDao().getByEmail(accountName);
+            case TELEPHONE -> account = getDao().getByTelephone(accountName);
+        }
+        return account;
+    }
+
+    @Override
+    public List<DataSetAccount> listDataSetAccounts(Account account) {
+        return dataSetAccountService.list(QDataSetAccount.accountId.equal(account.getId()));
     }
 }

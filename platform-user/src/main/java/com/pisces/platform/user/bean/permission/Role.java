@@ -21,8 +21,6 @@ public class Role extends BeanObject {
     private String roleName;
     @PropertyMeta(popDisplay = true)
     private String remarks;
-    private Long accountId;
-    private Long dataSetId;
 
     @Override
     public void init() {
@@ -30,7 +28,5 @@ public class Role extends BeanObject {
         roleCode = "";
         roleName = "";
         remarks = "";
-        accountId = 0L;
-        dataSetId = 0L;
     }
 }

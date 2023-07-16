@@ -2,6 +2,9 @@ package com.pisces.platform.user.service.dataset;
 
 import com.pisces.framework.core.service.BeanService;
 import com.pisces.platform.user.bean.dataset.Account;
+import com.pisces.platform.user.bean.dataset.DataSetAccount;
+
+import java.util.List;
 
 /**
  * 帐户服务
@@ -32,10 +35,18 @@ public interface AccountService extends BeanService<Account> {
     void unregister(Account account);
 
     /**
-     * 根据用户名获取账号信息
+     * 根据账号名获取账号信息
      *
-     * @param username 用户名
+     * @param accountName 账号名
      * @return {@link Account}
      */
-    Account getByUserName(String username);
+    Account getByAccountName(String accountName);
+
+    /**
+     * 列表数据集账户
+     *
+     * @param account 账户
+     * @return {@link List}<{@link DataSetAccount}>
+     */
+    List<DataSetAccount> listDataSetAccounts(Account account);
 }

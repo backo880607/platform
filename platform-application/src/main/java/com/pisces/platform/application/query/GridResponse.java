@@ -14,6 +14,6 @@ import java.util.List;
  */
 @Data
 public class GridResponse {
-    private Integer totalRow = 0;
+    private Long totalRow = 0L;
     private List<? extends BeanObject> beans = new ArrayList<>();
 }
