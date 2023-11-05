@@ -17,10 +17,8 @@
 
     <modules>
         <module>platform-log</module>
-        <module>platform-token</module>
         <module>platform-application</module>
         <module>platform-storage</module>
-        <module>platform-workflow</module>
         <module>platform-user</module>
         <module>platform-notification</module>
         <module>platform-chat</module>
@@ -42,22 +40,12 @@
             </dependency>
             <dependency>
                 <groupId>com.pisces.platform</groupId>
-                <artifactId>platform-token</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.pisces.platform</groupId>
                 <artifactId>platform-application</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>com.pisces.platform</groupId>
                 <artifactId>platform-storage</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
-            </dependency>
-            <dependency>
-                <groupId>com.pisces.platform</groupId>
-                <artifactId>platform-workflow</artifactId>
                 <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <dependency>

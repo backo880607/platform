@@ -1,6 +1,6 @@
 package com.pisces.platform.application.query;
 
-import com.pisces.framework.core.enums.VALUE_SORT_TYYPE;
+import com.pisces.framework.core.enums.VALUE_SORT_TYPE;
 import lombok.Data;
 
 /**
@@ -12,5 +12,5 @@ import lombok.Data;
 @Data
 public class GridSortModel {
     private String column;
-    private VALUE_SORT_TYYPE sort;
+    private VALUE_SORT_TYPE sort;
 }

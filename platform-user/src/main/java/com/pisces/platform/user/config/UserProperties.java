@@ -15,7 +15,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Setter
 @ConfigurationProperties(prefix = "pisces.platform.user")
 public class UserProperties extends BaseProperties {
-    private TenantConfig tenantConfig;
+    private TenantConfig tenant;
+    private TokenConfig token = new TokenConfig();
 
     public UserProperties() {
         super(UserConstant.IDENTIFY);

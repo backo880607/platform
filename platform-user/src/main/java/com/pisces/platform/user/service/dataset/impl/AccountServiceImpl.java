@@ -10,11 +10,14 @@ import com.pisces.framework.core.utils.lang.StringUtils;
 import com.pisces.platform.user.bean.dataset.Account;
 import com.pisces.platform.user.bean.dataset.DataSetAccount;
 import com.pisces.platform.user.bean.dataset.table.QDataSetAccount;
+import com.pisces.platform.user.bean.organization.Employee;
+import com.pisces.platform.user.bean.organization.table.QEmployee;
 import com.pisces.platform.user.config.UserMessage;
 import com.pisces.platform.user.dao.dataset.AccountDao;
 import com.pisces.platform.user.enums.system.LOGIN_TYPE;
 import com.pisces.platform.user.service.dataset.AccountService;
 import com.pisces.platform.user.service.dataset.DataSetAccountService;
+import com.pisces.platform.user.service.organization.EmployeeService;
 import com.pisces.platform.user.service.system.UserConfigService;
 import com.pisces.platform.user.token.TokenUtil;
 import jakarta.annotation.Resource;
@@ -34,6 +37,9 @@ import java.util.List;
 class AccountServiceImpl extends BeanServiceImpl<Account, AccountDao> implements AccountService {
     @Resource
     private UserConfigService configService;
+    @Resource
+    private EmployeeService employeeService;
+
     private static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
     private static final String ROOT_ACCOUNT = "root";
 
@@ -105,10 +111,20 @@ class AccountServiceImpl extends BeanServiceImpl<Account, AccountDao> implements
         TokenUtil.login(data);
     }
 
+    @Override
+    public void logout() {
+        TokenUtil.logout();
+    }
+
     private void loginRoot() {
+        DataSetAccount dataSetAccount = dataSetAccountService.get();
+        if (dataSetAccount == null) {
+            throw new CommonException(UserMessage.UnbindDataSet, "ROOT");
+        }
         AccountData data = new AccountData();
         data.setAccount(ROOT_ACCOUNT);
         data.setTenant(AppUtils.ROOT_TENANT);
+        data.setDataSet(dataSetAccount.getDataSetId());
         data.getAuthorities().add("ROLE_ROOT");
         TokenUtil.login(data);
     }
@@ -158,5 +174,13 @@ class AccountServiceImpl extends BeanServiceImpl<Account, AccountDao> implements
     @Override
     public List<DataSetAccount> listDataSetAccounts(Account account) {
         return dataSetAccountService.list(QDataSetAccount.accountId.equal(account.getId()));
+    }
+
+    @Override
+    public Employee getEmpolyee(Account account) {
+        if (account == null || StringUtils.isEmpty(account.getEmployeeCode())) {
+            return null;
+        }
+        return employeeService.get(QEmployee.employeeCode.equal(account.getEmployeeCode()));
     }
 }

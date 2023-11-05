@@ -1,4 +1,4 @@
-package com.pisces.platform.application.bean;
+package com.pisces.platform.user.bean.system;
 
 import com.pisces.framework.core.entity.BeanAccount;
 import com.pisces.framework.type.annotation.TableMeta;
@@ -6,15 +6,15 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * 应用程序配置
+ * 应用配置
  *
- * @author Jason
- * @date 2022-03-24
+ * @author jason
+ * @date 2023/07/05
  */
 @Getter
 @Setter
-@TableMeta(name = "PLATFORM_APPLICATION_CONFIG")
-public class ApplicationConfig extends BeanAccount {
+@TableMeta(name = "USER_APP_CONFIG")
+public class AppConfig extends BeanAccount {
     private String lastApp;
     private String language;
     private String background;

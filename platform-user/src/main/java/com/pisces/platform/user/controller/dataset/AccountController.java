@@ -2,11 +2,13 @@ package com.pisces.platform.user.controller.dataset;
 
 import com.pisces.framework.core.utils.AppUtils;
 import com.pisces.framework.core.utils.lang.Guard;
+import com.pisces.framework.core.utils.lang.StringUtils;
 import com.pisces.framework.core.validator.group.InsertGroup;
 import com.pisces.framework.web.controller.BeanController;
 import com.pisces.framework.web.controller.ResponseData;
 import com.pisces.platform.user.bean.dataset.Account;
 import com.pisces.platform.user.bean.dataset.DataSetAccount;
+import com.pisces.platform.user.bean.organization.Employee;
 import com.pisces.platform.user.config.UserConstant;
 import com.pisces.platform.user.config.UserMessage;
 import com.pisces.platform.user.dto.UserDataDto;
@@ -60,7 +62,19 @@ class AccountController extends BeanController<Account, AccountService> {
             lastDataSet = dataSets.get(0);
         }
         userData.setLastDataSet(lastDataSet != null ? lastDataSet.getId() : 0L);
+        if (StringUtils.isEmpty(account.getFullName())) {
+            Employee employee = getService().getEmpolyee(account);
+            if (employee != null) {
+                userData.setFullName(employee.getEmployeeName());
+            }
+        }
         return success(userData);
+    }
+
+    @GetMapping("logout")
+    public ResponseData logout() {
+        getService().logout();
+        return null;
     }
 
     @PostMapping("register")

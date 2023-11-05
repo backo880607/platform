@@ -3,6 +3,7 @@ package com.pisces.platform.user.service.dataset;
 import com.pisces.framework.core.service.BeanService;
 import com.pisces.platform.user.bean.dataset.Account;
 import com.pisces.platform.user.bean.dataset.DataSetAccount;
+import com.pisces.platform.user.bean.organization.Employee;
 
 import java.util.List;
 
@@ -19,6 +20,11 @@ public interface AccountService extends BeanService<Account> {
      * @param account 账户
      */
     void login(Account account);
+
+    /**
+     * 登录注销
+     */
+    void logout();
 
     /**
      * 注册账户
@@ -49,4 +55,12 @@ public interface AccountService extends BeanService<Account> {
      * @return {@link List}<{@link DataSetAccount}>
      */
     List<DataSetAccount> listDataSetAccounts(Account account);
+
+    /**
+     * 得到empolyee
+     *
+     * @param account 账户
+     * @return {@link Employee}
+     */
+    Employee getEmpolyee(Account account);
 }

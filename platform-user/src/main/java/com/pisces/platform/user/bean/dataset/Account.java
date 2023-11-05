@@ -35,6 +35,7 @@ public class Account extends BeanObject {
     private Boolean credentialsExpired;
     private Long lastDataSet;
     private Boolean enabled;
+    private String employeeCode;
 
     @Override
     public void init() {
@@ -52,5 +53,6 @@ public class Account extends BeanObject {
         avatar = "";
         lastDataSet = 0L;
         enabled = true;
+        employeeCode = "";
     }
 }
